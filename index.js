@@ -14,11 +14,10 @@ module.exports = class PCUserCheck extends Plugin {
   }
   async check(ID) {
     try {
-      //{"developer":null,"staff":null,"support":null,"contributor":null,"translator":null,"hunter":null,"early":null}
       const Data = await get(`https://powercord.dev/api/v2/users/${ID}`)
       const Embed = {
         type: 'rich',
-        title: '**' + Data.body.username + '#' + Data.body.discriminator + '**',
+        title: '**' + Data.body.username + '#' + Data.body.discriminator + ', Info.**',
         description: '**This list may be out of date.**',
         fields: [
           {
@@ -42,7 +41,7 @@ module.exports = class PCUserCheck extends Plugin {
         embed: true
       }
     } catch (err) {
-      console.error('Error executing "pc-user-checker":\n' + err)
+      //console.error('Error executing "pc-user-checker":\n' + err)
       return {
         result: '**Failed connect or invalid user in API Data.**',
       }
