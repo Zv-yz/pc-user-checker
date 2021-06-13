@@ -14,7 +14,7 @@ module.exports = class PCUserCheck extends Plugin {
   }
   async check(ID) {
     try {
-      const Data = await get(`https://powercord.dev/api/v2/users/${ID}`)
+      const Data = await get(`https://powercord.dev/api/v2/users/${ID}`) // bruh
       const Embed = {
         type: 'rich',
         title: '**' + Data.body.username + '#' + Data.body.discriminator + ', Info.**',
